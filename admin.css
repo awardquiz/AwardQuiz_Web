@@ -1,0 +1,154 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700,600italic");
+
+* {
+    margin: 0;
+    padding: 0;
+	}
+body {
+    font-family: 'Open Sans';
+    background-color:#F1F1F1;
+    height:100%; 
+}
+
+a {
+    text-decoration: none;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: #2c3e50;
+    margin: 0 auto;
+    position:fixed;
+    z-index:99999;
+}
+
+#logo {
+    float: left;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+    #logo a {
+        font-size: 1.3em;
+        color: #fff;
+    }
+
+        #logo a span {
+            font-weight: 300;
+        }
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#sol {
+    width: 250px;
+    height: calc(100% + 50px);
+    background-color: #171717;
+    float: left;
+    position:fixed;
+	left:0;
+	padding-top:60px;
+
+    
+}
+
+#sag {
+    width: auto;
+    height:100%;
+    margin-left: 250px;
+    /*background-color:#ebebeb;*/
+    background-color:#F1F1F1;
+    padding: 15px;
+}
+
+    #sag p {
+        color: #424242;
+        font-size: 0.73em;
+    }
+
+#box {
+    margin-top: 15px;
+}
+
+    #box #box-top {
+        color: #fff;
+        text-shadow: 0px 0px 1px #ddd;
+        padding: 5px;
+        padding-left: 15px;
+        background-color: #2980b9;
+    }
+
+    #box #box-panel {
+        padding: 15px;
+        background-color: #fff;
+    }
+
+.menu_head {
+    color: #ccc;
+    display: block;
+    padding: 10px;
+    font-size: 1em;
+    border-bottom: 1px solid #0a0a0a;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+
+}
+
+    .menu_head:hover {
+        border-bottom:1px solid orange;
+        background-color: #030303;
+        color: #fff;
+    }
+
+.menu_body {
+    display: none;
+}
+
+    .menu_body a {
+        color: #ccc;
+        display: block;
+        padding:10px 0 10px 30px;
+        font-size: 1em;
+        border-bottom: 1px solid #0a0a0a;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.1s;
+    }
+
+        .menu_body a:hover {
+        background-color: #030303;
+        border-left:4px solid orange;
+            color: #fff;
+            padding-left: 30px;
+        }
+
+
+.btnGorsel {
+    border-color:#006799;
+    background:#0085ba;
+    color: #fff;
+    text-shadow:0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799;
+    border-radius:3px;
+    font-size:18px;
+}
+
+    .btnGorsel:hover {
+        background-color:#0073aa ;
+        cursor:pointer;
+    }
+
+.txtGorsel {
+border:1px solid #ddd;
+padding:10px;
+}
+
+.txtGorsel:focus{
+
+    border:1.5px solid #00a0d2;
+}

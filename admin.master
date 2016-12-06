@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin_admin" %>
+
+
+
+<head runat="server">
+    <title></title>
+    <link href="admin.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery.js"></script>
+   
+    <style type="text/css">
+        .adminAna {
+            float: right;
+            color: white;
+            margin-right: 20px;
+            height: 50px;
+        }
+
+            .adminAna a {
+                color: white;
+            }
+
+
+        .cikis {
+            background-color: red;
+            width: 50px;
+            height: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#firstpane p.menu_head").click(function () {
+                $(this).css({}).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("fast");
+                $(this).siblings().css({});
+            });
+            $("#secondpane p.menu_head").mouseover(function () {
+                $(this).css({}).next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("fast");
+                $(this).siblings().css({});
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <div id="logo"><a href="../adminpanel.aspx">Admin <span>Paneli</span></a></div>
+            <div class="adminAna">
+                <a href="../default.aspx"><i class="fa fa-home"></i>Ana Sayfa</a><br />
+                <a href="../cikis.aspx"><i class="fa fa-home"></i>Çıkış Yap</a><br />
+            </div>
+        </div>
+        
+        <div id="container">
+            <div id="sol">
+                <div id="firstpane" class="menu_list">
+                    <asp:Panel ID="Panel1" runat="server">
+                    <p class="menu_head"><i class="fa fa-bars"></i>Sınıflar</p>
+                    <div class="menu_body">
+                        <a href="../sinifEkle.aspx" id="a1"><i class="fa fa-plus"></i>Sınıf Ekle</a>
+                        <a href="../sinifDuzenle.aspx"><i class="fa fa-edit"></i>Sınıf Düzenleme</a>
+                    
+                    </div>
+                    <p class="menu_head"><i class="fa fa-pencil"></i>Üniteler</p>
+                    <div class="menu_body">
+                        <a href="../uniteEkle.aspx"><i class="fa fa-plus"></i>Ünite Ekle</a>
+                        <a href="../uniteDuzenle.aspx"><i class="fa fa-edit"></i>Ünite Düzenle</a>
+                    </div>
+                     <p class="menu_head"><i class="fa fa-pencil"></i>Dersler</p>
+                    <div class="menu_body">
+                        <a href="../dersEkle.aspx"><i class="fa fa-plus"></i>Ders Ekle</a>
+                        <a href="../dersDuzenle.aspx"><i class="fa fa-edit"></i>Ders Düzenle</a>
+                    </div></asp:Panel>
+                     <p class="menu_head"><i class="fa fa-pencil"></i>Sorular</p>
+                    <div class="menu_body">
+                        <a href="../soruEkle.aspx"><i class="fa fa-plus"></i>Soru Ekle</a>
+                        <a href="../soruDuzenle.aspx"><i class="fa fa-edit"></i>Soru Düzenle</a>
+                    </div>
+                    <p class="menu_head"><i class="fa fa-pencil"></i>Kullanıcılar</p>
+                    <div class="menu_body">
+                        <asp:Panel ID="Panel2" runat="server">
+                            <a href="../kullaniciEkle.aspx"><i class="fa fa-plus"></i>Kullanıcı Ekle</a>
+                            <a href="../kullaniciDuzenle.aspx"><i class="fa fa-plus"></i>Kullanıcı Düzenle</a>
+                        </asp:Panel>
+                        <a href="../bilgiDuzenle.aspx"><i class="fa fa-edit"></i>Bilgileri Düzenle</a>
+                    </div>
+                     <p class="menu_head"><i class="fa fa-pencil"></i>Sınav Oluşturucu</p>
+                    <div class="menu_body">
+                        <a href="../sinav.aspx"><i class="fa fa-plus"></i>Sınav Oluştur</a>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+
+            <div id="sag">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+
+
