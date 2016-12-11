@@ -85,9 +85,13 @@
                         </asp:Panel>
                         <a href="../bilgiDuzenle.aspx"><i class="fa fa-edit"></i>Bilgileri Düzenle</a>
                     </div>
-                     <p class="menu_head"><i class="fa fa-pencil"></i>Sınav Oluşturucu</p>
+                    <p class="menu_head"><i class="fa fa-pencil"></i>Sınav Oluşturucu</p>
                     <div class="menu_body">
                         <a href="../sinav.aspx"><i class="fa fa-plus"></i>Sınav Oluştur</a>
+                    </div>
+                    <p class="menu_head"><i class="fa fa-pencil"></i>Bilgisayar Erişim İzin Yöneticisi</p>
+                    <div class="menu_body">
+                        <a href="../sinav.aspx"><i class="fa fa-plus"></i>Erişim İzin Kayıtı Ekle</a>
                     </div>
 
 
