@@ -14,14 +14,11 @@ public partial class sinav : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        //if (Session["yoneticiKullanici"] == null)
-        //{
-        //    Response.Redirect("default.aspx");
-        //}
-        //if (Convert.ToString(Session["Yetki"]) != "1")
-        //{
-        //    Response.Redirect("adminpanel.aspx");
-        //}
+        if (Session["yoneticiKullanici"] == null)
+        {
+            Response.Redirect("default.aspx");
+        }
+
 
         if (Page.IsPostBack == false)
         {
@@ -32,9 +29,18 @@ public partial class sinav : System.Web.UI.Page
             DropDownList1.DataSource = drsinif_getir;
             DropDownList1.DataBind();
 
-            SqlCommand ders_getir = new SqlCommand("SELECT * FROM Dersler", baglan.baglan());
-            SqlDataReader drders_getir = ders_getir.ExecuteReader();
-            DropDownList2.DataSource = drders_getir;
+            if (Convert.ToString(Session["Yetki"]) == "1")
+            {
+                SqlCommand ders_getir = new SqlCommand("SELECT * FROM Dersler", baglan.baglan());
+                SqlDataReader drders_getir = ders_getir.ExecuteReader();
+                DropDownList2.DataSource = drders_getir;
+            }
+            else
+            {
+                SqlCommand ders_getir = new SqlCommand("SELECT * FROM Dersler INNER JOIN Yonetici ON Dersler.DersId = Yonetici.DersId where Dersler.DersId='" + Session["DersId"] + "'", baglan.baglan());
+                SqlDataReader drders_getir = ders_getir.ExecuteReader();
+                DropDownList2.DataSource = drders_getir;
+            }
 
             DropDownList2.DataTextField = "DersAdi";
             DropDownList2.DataValueField = "DersId";
@@ -46,6 +52,7 @@ public partial class sinav : System.Web.UI.Page
             DropDownList3.DataValueField = "UniteId";
             DropDownList3.DataSource = drunite_getir;
             DropDownList3.DataBind();
+
 
         }
 

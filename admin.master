@@ -91,7 +91,7 @@
                     </div>
                     <p class="menu_head"><i class="fa fa-pencil"></i>Bilgisayar Erişim İzin Yöneticisi</p>
                     <div class="menu_body">
-                        <a href="../sinav.aspx"><i class="fa fa-plus"></i>Erişim İzin Kayıtı Ekle</a>
+                        <a href="../erisimizinEkle.aspx"><i class="fa fa-plus"></i>Erişim İzin Kayıtı Ekle</a>
                     </div>
 
 
