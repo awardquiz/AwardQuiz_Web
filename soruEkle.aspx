@@ -27,7 +27,7 @@
 
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="txtGorsel" Height="36px" Width="811px" placeholder="Soru Bilgisi"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="txtGorsel" Height="129px" Width="809px" placeholder="Soru Bilgisi" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

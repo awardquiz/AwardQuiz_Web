@@ -57,6 +57,7 @@
         </tr>
         <tr>
             <td>
+               Önceki Cevap :  <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 <br />
             </td>
         </tr>

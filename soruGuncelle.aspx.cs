@@ -67,14 +67,38 @@ public partial class soruGuncelle : System.Web.UI.Page
             TextBox3.Text = row["Secenek2"].ToString();
             TextBox4.Text = row["Secenek3"].ToString();
             TextBox5.Text = row["Secenek4"].ToString();
+            Label1.Text = row["Cevap"].ToString();
         }
     }
 
 
     protected void btn_soruEkle_Click(object sender, EventArgs e)
     {
-        SqlCommand cmkguncelle = new SqlCommand("update Sorular Set SinifId='" + DropDownList1.SelectedValue + "',DersId='" + DropDownList2.SelectedValue + "', UniteId='" + DropDownList3.SelectedValue + "',SoruBilgi='" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "',Secenek1='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "',Secenek2='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "',Secenek3='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "',Secenek4='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "'  where SoruId='" + SoruId + "'", baglan.baglan());
-        cmkguncelle.ExecuteNonQuery();
+        if (RadioButtonList1.SelectedIndex == 0)
+        {
+            SqlCommand cmkguncelle = new SqlCommand("update Sorular Set SinifId='" + DropDownList1.SelectedValue + "',DersId='" + DropDownList2.SelectedValue + "', UniteId='" + DropDownList3.SelectedValue + "',SoruBilgi='" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "',Secenek1='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "',Secenek2='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "',Secenek3='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "',Secenek4='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "',cevap='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "'  where SoruId='" + SoruId + "'", baglan.baglan());
+            cmkguncelle.ExecuteNonQuery();
+        }
+        else if (RadioButtonList1.SelectedIndex == 1)
+        {
+            SqlCommand cmkguncelle = new SqlCommand("update Sorular Set SinifId='" + DropDownList1.SelectedValue + "',DersId='" + DropDownList2.SelectedValue + "', UniteId='" + DropDownList3.SelectedValue + "',SoruBilgi='" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "',Secenek1='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "',Secenek2='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "',Secenek3='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "',Secenek4='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "',cevap='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "'  where SoruId='" + SoruId + "'", baglan.baglan());
+            cmkguncelle.ExecuteNonQuery();
+        }
+        else if (RadioButtonList1.SelectedIndex == 2)
+        {
+            SqlCommand cmkguncelle = new SqlCommand("update Sorular Set SinifId='" + DropDownList1.SelectedValue + "',DersId='" + DropDownList2.SelectedValue + "', UniteId='" + DropDownList3.SelectedValue + "',SoruBilgi='" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "',Secenek1='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "',Secenek2='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "',Secenek3='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "',Secenek4='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "',cevap='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "'  where SoruId='" + SoruId + "'", baglan.baglan());
+            cmkguncelle.ExecuteNonQuery();
+        }
+        else if (RadioButtonList1.SelectedIndex == 3)
+        {
+            SqlCommand cmkguncelle = new SqlCommand("update Sorular Set SinifId='" + DropDownList1.SelectedValue + "',DersId='" + DropDownList2.SelectedValue + "', UniteId='" + DropDownList3.SelectedValue + "',SoruBilgi='" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "',Secenek1='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "',Secenek2='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "',Secenek3='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "',Secenek4='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "',cevap='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "'  where SoruId='" + SoruId + "'", baglan.baglan());
+            cmkguncelle.ExecuteNonQuery();
+        }
+        else
+        {
+            SqlCommand cmkguncelle = new SqlCommand("update Sorular Set SinifId='" + DropDownList1.SelectedValue + "',DersId='" + DropDownList2.SelectedValue + "', UniteId='" + DropDownList3.SelectedValue + "',SoruBilgi='" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "',Secenek1='" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "',Secenek2='" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "',Secenek3='" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "',Secenek4='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "',cevap='" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "'  where SoruId='" + SoruId + "'", baglan.baglan());
+            cmkguncelle.ExecuteNonQuery();
+        }
         Response.Redirect("soruDuzenle.aspx");
     }
 }
