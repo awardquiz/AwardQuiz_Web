@@ -17,7 +17,7 @@
         <asp:Repeater ID="Repeater1" runat="server" EnableTheming="True">
        
             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("SoruBilgi") %>' Font-Bold="True" Font-Size="12"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Container.ItemIndex + 1 + "-)"%> ' Font-Bold="True" Font-Size="12"></asp:Label><asp:Label ID="Label2" runat="server" Text='<%# Eval("SoruBilgi") %>' Font-Bold="True" Font-Size="12"></asp:Label>
                                 <br />
                                 <asp:Label ID="Label4" runat="server" Text='<%# "A-)" + Eval("Secenek1") %>'></asp:Label>
                                 <br />

@@ -13,7 +13,9 @@ public partial class sinav : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        label1.Visible = false;
+        label2.Visible = false;
+        label3.Visible = false;
         if (Session["yoneticiKullanici"] == null)
         {
             Response.Redirect("default.aspx");
@@ -59,12 +61,32 @@ public partial class sinav : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        SqlCommand getir = new SqlCommand("SELECT * FROM Dersler INNER JOIN Sorular ON Dersler.DersId = Sorular.DersId INNER JOIN Unite ON Sorular.UniteId = Unite.UniteId INNER JOIN Sinif ON Sorular.SinifId = Sinif.SinifId where Sinif.SinifId='" + DropDownList1.SelectedValue + "'", baglan.baglan());
-        SqlDataReader drkgetir = getir.ExecuteReader();
+       
+        label1.Visible = true;
+        label2.Visible = true;
+        label3.Visible = true;
+       
+        SqlCommand kolaygetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='"+DropDownList2.SelectedValue+"' and UniteId='"+DropDownList3.SelectedValue+"' and Derece='0'", baglan.baglan());
+        SqlDataReader kdrkgetir = kolaygetir.ExecuteReader();
         CheckBoxList1.DataTextField = "SoruBilgi";
         CheckBoxList1.DataValueField = "SoruId";
-        CheckBoxList1.DataSource = drkgetir;
+        CheckBoxList1.DataSource = kdrkgetir;
         CheckBoxList1.DataBind();
+
+        SqlCommand ortagetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='" + DropDownList2.SelectedValue + "' and UniteId='" + DropDownList3.SelectedValue + "' and Derece='1'", baglan.baglan());
+        SqlDataReader odrkgetir = ortagetir.ExecuteReader();
+        CheckBoxList2.DataTextField = "SoruBilgi";
+        CheckBoxList2.DataValueField = "SoruId";
+        CheckBoxList2.DataSource = odrkgetir;
+        CheckBoxList2.DataBind();
+
+        SqlCommand zorgetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='" + DropDownList2.SelectedValue + "' and UniteId='" + DropDownList3.SelectedValue + "' and Derece='2'", baglan.baglan());
+        SqlDataReader zdrkgetir = zorgetir.ExecuteReader();
+        CheckBoxList3.DataTextField = "SoruBilgi";
+        CheckBoxList3.DataValueField = "SoruId";
+        CheckBoxList3.DataSource = zdrkgetir;
+        CheckBoxList3.DataBind();
+        
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
@@ -81,6 +103,34 @@ public partial class sinav : System.Web.UI.Page
                 }
                 parametre += CheckBoxList1.Items[i].Value;
                 
+            }
+        }
+
+        for (int i = 0; i < CheckBoxList2.Items.Count; i++)
+        {
+            if (CheckBoxList2.Items[i].Selected)
+            {
+                sira++;
+                if (sira > 1)
+                {
+                    parametre += ",";
+                }
+                parametre += CheckBoxList2.Items[i].Value;
+
+            }
+        }
+
+        for (int i = 0; i < CheckBoxList3.Items.Count; i++)
+        {
+            if (CheckBoxList3.Items[i].Selected)
+            {
+                sira++;
+                if (sira > 1)
+                {
+                    parametre += ",";
+                }
+                parametre += CheckBoxList3.Items[i].Value;
+
             }
         }
 

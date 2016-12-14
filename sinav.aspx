@@ -51,7 +51,27 @@
               <table class="auto-style1">
                 <tr>
                     <td class="auto-style12">
+                        <asp:Label ID="label1" Text="Kolay" runat="server" Font-Bold="True" Font-Size="Large" />
                         <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
+                        <br />
+                       
+                    </td>
+                    
+                </tr>
+
+                    <tr> 
+                    <td class="auto-style12">
+                        <asp:Label ID="label2" Text="Orta" runat="server" Font-Bold="True" Font-Size="Large" />
+                        <asp:CheckBoxList ID="CheckBoxList2" runat="server"></asp:CheckBoxList>
+                        <br />
+                       
+                    </td>
+                    
+                </tr>
+                    <tr>
+                    <td class="auto-style12">
+                       <asp:Label ID="label3" Text="Zor" runat="server" Font-Bold="True" Font-Size="Large" />
+                        <asp:CheckBoxList ID="CheckBoxList3" runat="server"></asp:CheckBoxList>
                         <br />
                        
                     </td>
