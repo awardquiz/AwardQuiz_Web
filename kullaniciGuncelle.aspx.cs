@@ -30,13 +30,13 @@ public partial class kullaniciGuncelle : System.Web.UI.Page
     }
     protected void btnkguncelle_Click(object sender, EventArgs e)
     {
-        if (TextBox2.Text == "" && TextBox3.Text == "")
+        if (TextBox2.Text == "" || TextBox3.Text == "")
         {
             Label1.Text = "Boş Değer Girilmez";
         }
         else
         {
-            SqlCommand cmkguncelle = new SqlCommand("update Yonetici Set yoneticiSifre='" + TextBox2.Text + "'where yoneticiId='" + yoneticiId + "'", baglan.baglan());
+            SqlCommand cmkguncelle = new SqlCommand("update Yonetici Set yoneticiKullanici='" + TextBox1.Text + "', yoneticiSifre='" + TextBox2.Text + "' where yoneticiId='" + yoneticiId + "'", baglan.baglan());
             cmkguncelle.ExecuteNonQuery();
         }
         

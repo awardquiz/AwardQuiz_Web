@@ -85,7 +85,6 @@ public partial class soruEkle : System.Web.UI.Page
             SqlCommand ekle = new SqlCommand("insert into Sorular (SoruBilgi,Secenek1,Secenek2,Secenek3,Secenek4,Cevap,Derece,SinifId,DersId,UniteId) values ('" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "','" + DropDownList4.SelectedValue + "','" + DropDownList1.SelectedValue + "','" + DropDownList2.SelectedValue + "','" + DropDownList3.SelectedValue + "')", baglan.baglan());
             ekle.ExecuteNonQuery();
         }
-
         bosalt();
 
     }

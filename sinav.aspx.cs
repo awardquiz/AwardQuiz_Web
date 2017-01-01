@@ -48,12 +48,7 @@ public partial class sinav : System.Web.UI.Page
             DropDownList2.DataValueField = "DersId";
             DropDownList2.DataBind();
 
-            SqlCommand unite_getir = new SqlCommand("select * from Unite", baglan.baglan());
-            SqlDataReader drunite_getir = unite_getir.ExecuteReader();
-            DropDownList3.DataTextField = "UniteIsım";
-            DropDownList3.DataValueField = "UniteId";
-            DropDownList3.DataSource = drunite_getir;
-            DropDownList3.DataBind();
+            
 
 
         }
@@ -65,22 +60,22 @@ public partial class sinav : System.Web.UI.Page
         label1.Visible = true;
         label2.Visible = true;
         label3.Visible = true;
-       
-        SqlCommand kolaygetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='"+DropDownList2.SelectedValue+"' and UniteId='"+DropDownList3.SelectedValue+"' and Derece='0'", baglan.baglan());
+
+        SqlCommand kolaygetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='"+DropDownList2.SelectedValue+"' and Derece='0'", baglan.baglan());
         SqlDataReader kdrkgetir = kolaygetir.ExecuteReader();
         CheckBoxList1.DataTextField = "SoruBilgi";
         CheckBoxList1.DataValueField = "SoruId";
         CheckBoxList1.DataSource = kdrkgetir;
         CheckBoxList1.DataBind();
 
-        SqlCommand ortagetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='" + DropDownList2.SelectedValue + "' and UniteId='" + DropDownList3.SelectedValue + "' and Derece='1'", baglan.baglan());
+        SqlCommand ortagetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='" + DropDownList2.SelectedValue + "' and Derece='1'", baglan.baglan());
         SqlDataReader odrkgetir = ortagetir.ExecuteReader();
         CheckBoxList2.DataTextField = "SoruBilgi";
         CheckBoxList2.DataValueField = "SoruId";
         CheckBoxList2.DataSource = odrkgetir;
         CheckBoxList2.DataBind();
 
-        SqlCommand zorgetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='" + DropDownList2.SelectedValue + "' and UniteId='" + DropDownList3.SelectedValue + "' and Derece='2'", baglan.baglan());
+        SqlCommand zorgetir = new SqlCommand("SELECT * from Sorular where SinifId='" + DropDownList1.SelectedValue + "' and DersId='" + DropDownList2.SelectedValue + "' and Derece='2'", baglan.baglan());
         SqlDataReader zdrkgetir = zorgetir.ExecuteReader();
         CheckBoxList3.DataTextField = "SoruBilgi";
         CheckBoxList3.DataValueField = "SoruId";

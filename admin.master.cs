@@ -13,6 +13,7 @@ public partial class admin_admin : System.Web.UI.MasterPage
         {
             Panel1.Visible = false;
             Panel2.Visible = false;
+            Panel3.Visible = false;
 
         }
     }
