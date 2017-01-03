@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <div style="height: 28px; color: #23282d; font-weight: 400; font-size: 23px; margin-top: 55px;">Yeni Soru Ekle</div>
+    <div style="height: 28px; color: #23282d; font-weight: 400; font-size: 23px; margin-top: 55px;">Yeni Soru Ekle</div>
     <div style="height: 19px; width: 799px"></div>
 
 
@@ -32,22 +32,22 @@
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="TextBox2" runat="server" CssClass="txtGorsel" Height="36px" Width="811px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
+                A-)  <asp:TextBox ID="TextBox2" runat="server" CssClass="txtGorsel" Height="36px" Width="811px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="TextBox3" runat="server" CssClass="txtGorsel" Height="36px" Width="812px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
+                B-)  <asp:TextBox ID="TextBox3" runat="server" CssClass="txtGorsel" Height="36px" Width="812px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="TextBox4" runat="server" CssClass="txtGorsel" Height="36px" Width="811px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
+                C-)  <asp:TextBox ID="TextBox4" runat="server" CssClass="txtGorsel" Height="36px" Width="811px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="TextBox5" runat="server" CssClass="txtGorsel" Height="36px" Width="810px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
+                D-) <asp:TextBox ID="TextBox5" runat="server" CssClass="txtGorsel" Height="36px" Width="810px" placeholder="Seçenek"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="Boş Değer Girilmez"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -64,7 +64,7 @@
         <tr>
             <td>
                 <br />
-                <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="21px" RepeatDirection="Horizontal" Width="298px">
+                Cevap : <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="21px" RepeatDirection="Horizontal" Width="298px">
                     <asp:ListItem>A</asp:ListItem>
                     <asp:ListItem>B</asp:ListItem>
                     <asp:ListItem>C</asp:ListItem>

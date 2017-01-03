@@ -64,10 +64,10 @@
 <body>
     <form id="form1" runat="server">
         <div id="login">
-            <h1>Admin Giriş Paneli</h1>
+            <h1>Yönetici Giriş Paneli</h1>
             <asp:TextBox ID="txt_kadi" runat="server" placeholder="Kullanıcı Adı"></asp:TextBox>
             <asp:TextBox ID="txt_sifre" runat="server" placeholder="Şifre" TextMode="Password"></asp:TextBox>
-            <asp:Button ID="btn_giris" runat="server" Text="Button" OnClick="btn_giris_Click" />
+            <asp:Button ID="btn_giris" runat="server" Text="Giriş Yap" OnClick="btn_giris_Click" />
         </div>
     </form>
 </body>

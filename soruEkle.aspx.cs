@@ -51,21 +51,21 @@ public partial class soruEkle : System.Web.UI.Page
             DropDownList3.DataSource = drunite_getir;
             DropDownList3.DataBind();
 
-            
+
         }
     }
 
     public void bosalt()
     {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
+        TextBox1.Text = "";
+        TextBox2.Text = "";
+        TextBox3.Text = "";
+        TextBox4.Text = "";
+        TextBox5.Text = "";
     }
     protected void btn_soruEkle_Click(object sender, EventArgs e)
     {
-        if (RadioButtonList1.SelectedIndex==0)
+        if (RadioButtonList1.SelectedIndex == 0)
         {
             SqlCommand ekle = new SqlCommand("insert into Sorular (SoruBilgi,Secenek1,Secenek2,Secenek3,Secenek4,Cevap,Derece,SinifId,DersId,UniteId) values ('" + TextBox1.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox3.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox4.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox5.Text.Trim().ToString().Replace("'", "''") + "','" + TextBox2.Text.Trim().ToString().Replace("'", "''") + "','" + DropDownList4.SelectedValue + "','" + DropDownList1.SelectedValue + "','" + DropDownList2.SelectedValue + "','" + DropDownList3.SelectedValue + "')", baglan.baglan());
             ekle.ExecuteNonQuery();
